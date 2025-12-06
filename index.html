@@ -1,0 +1,659 @@
+<!doctype html>
+<html lang="id">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Moch Ananta -  Portfolio</title>
+
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+
+  <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+
+  <script src="https://cdn.jsdelivr.net/npm/@studio-freight/lenis@1.0.28/dist/lenis.min.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity=""
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+
+</head>
+
+<body class="relative overflow-x-hidden">
+
+  <div id="cat-cursor" class="pointer-events-none fixed left-0 top-0 z-[9999] w-5 h-5">
+    <img src="public/paw.png" class="w-full h-full object-contain" />
+  </div>
+
+  <canvas id="particles"></canvas>
+  <header class="relative z-20">
+    <nav class="max-w-6xl mx-auto px-6 py-6 flex items-center justify-between">
+      <a class="flex items-center gap-3" href="#">
+        <div class="w-10 h-10 rounded-lg flex items-center justify-center"
+          style="background:linear-gradient(135deg,var(--accent)/12,var(--accent2)/8)">
+          <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+            <path d="M3 12h18" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+          </svg>
+        </div>
+        <span class="font-semibold tracking-tight">Moh. Ananta</span>
+      </a>
+
+      <div class="flex items-center gap-4">
+        <!-- Language Switcher -->
+        <div class="flex items-center gap-2 ml-3">
+          <button id="langToggle"
+            class="px-3 py-2 text-sm font-semibold rounded-lg flex items-center gap-2 transition-all duration-300 hover:bg-white/10 border border-white/10">
+
+            <!-- Globe Icon -->
+            <svg class="w-4 h-4 opacity-80" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
+              <path
+                d="M12 3a9 9 0 0 0 0 18a9 9 0 0 0 0-18zm0 0c2.5 2.5 2.5 12.5 0 15m0-15c-2.5 2.5-2.5 12.5 0 15M3 12h18" />
+            </svg>
+
+            <span id="langLabel">ID</span>
+          </button>
+        </div>
+
+        <button id="themeToggle"
+          class="relative w-16 h-9 flex items-center rounded-full transition-all duration-300 p-1"
+          style="background:#8B5CF6">
+
+          <!-- Circle -->
+          <div id="toggleCircle"
+            class="w-7 h-7 bg-white dark:bg-gray-200 rounded-full shadow flex items-center justify-center transition-transform duration-300">
+
+            <!-- Moon Icon -->
+            <svg id="iconMoon" class="w-6 h-6 text-purple-600 transition-opacity duration-300" fill="currentColor"
+              viewBox="0 0 24 24">
+              <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" />
+            </svg>
+
+            <!-- Sun Icon -->
+            <svg id="iconSun" class="w-20 h-20 text-yellow-500 transition-opacity duration-300 hidden"
+              fill="currentColor" viewBox="0 0 24 24">
+              <circle cx="12" cy="12" r="5" />
+              <path d="M12 1v3m0 16v3m10-10h-3M4 12H1m15.5-8.5L17 6m-10 12l-1.5 1.5m12-1.5L17 18m-10-12L5.5 5.5" />
+            </svg>
+
+          </div>
+        </button>
+      </div>
+    </nav>
+  </header>
+
+  <main class="relative z-10">
+    <section class="min-h-[80vh] flex items-center relative overflow-hidden" id="hero">
+      <div class="max-w-6xl mx-auto px-6 
+       grid grid-cols-1 
+       md:grid-cols-[70px_1fr_1fr] 
+       gap-10 items-center relative">
+
+        <!-- Sosial Media -->
+        <div class="flex mt-5 md:flex-col gap-5 justify-center md:justify-start 
+             items-center md:items-start order-1 md:order-none" data-aos-once="false" data-aos="fade-right"
+          data-aos-delay="100">
+
+          <a class="w-12 h-12 p-3 rounded-full glass flex items-center justify-center hover:scale-110 transition"
+            href="https://github.com/mochananta"><i class="fab fa-github text-2xl"></i></a>
+
+          <a class="w-12 h-12 p-3 rounded-full glass flex items-center justify-center hover:scale-110 transition"
+            href="https://www.linkedin.com/in/mohammad-ananta-a31336268"><i class="fab fa-linkedin text-2xl"></i></a>
+
+          <a class="w-12 h-12 p-3 rounded-full glass flex items-center justify-center hover:scale-110 transition"
+            href="https://www.instagram.com/mochanantaa"><i class="fab fa-instagram text-2xl"></i></a>
+
+          <a class="w-12 h-12 p-3 rounded-full glass flex items-center justify-center hover:scale-110 transition"
+            href="#oke"><i class="fab fa-facebook text-2xl"></i></a>
+        </div>
+
+        <!-- Text Content -->
+        <div data-aos="fade-up" data-aos-once="false" data-aos-delay="200"
+          class="z-10 text-center md:text-left order-2 md:order-none">
+
+          <h1
+            class="text-3xl sm:text-4xl font-extrabold leading-tight flex md:flex items-center gap-2 flex-wrap justify-center md:justify-start">
+            Hi there
+            <span style="color:var(--accent);font-weight:700" class="flex items-center gap-2">
+              Moh. Ananta
+              <img src="public/Running Cat.gif" class="w-16 h-16 object-none inline-block">
+            </span>
+          </h1>
+
+          <p class="mt-2" style="color:var(--muted)">
+            Saya adalah Web Developer yang berfokus pada pembuatan aplikasi modern dengan Laravel, Tailwind, dan
+            JavaScript.
+            Saya mengembangkan sistem yang cepat, rapi, responsif, dan mudah digunakan.
+          </p>
+
+          <!-- CTA Buttons -->
+          <div class="mt-6 flex items-center gap-4 justify-center md:justify-start" data-aos-once="false"
+            data-aos="fade-up" data-aos-delay="350">
+
+            <a href="#portfolio" class="inline-flex items-center gap-3 rounded-full px-4 py-2"
+              style="background:var(--accent);color:#000;font-weight:600;box-shadow:0 8px 30px rgba(139,92,246,0.12)">
+              Lihat Project
+            </a>
+
+            <a href="#about" class="inline-flex items-center gap-3 rounded-full px-4 py-2 border"
+              style="border-color:rgba(255,255,255,0.06);color:var(--text);background:transparent">
+              Tentang Saya
+            </a>
+          </div>
+
+          <!-- Typing Text -->
+          <div class="mt-6 text-sm" style="color:var(--muted)" data-aos-once="false" data-aos="fade-up"
+            data-aos-delay="450">
+            I'm currently — <span class="type-wrap" id="type"></span>
+          </div>
+
+        </div>
+
+        <!-- Avatar -->
+        <div class="flex items-center justify-center md:justify-end md:mt-0 mt-10 order-3 md:order-none"
+          data-aos="zoom-in" data-aos-once="false" data-aos-delay="300">
+
+          <div class="avatar-frame glass p-2 animate-float">
+            <div class="w-[230px] h-[230px] md:w-[300px] md:h-[300px] 
+             rounded-2xl overflow-hidden relative flex items-center justify-center 
+             bg-gray-200/10 backdrop-blur">
+
+              <img src="public/profil.png" alt="Foto Profil" class="w-full h-full object-cover object-center" />
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="absolute bottom-6 left-1/2 -translate-x-1/2 z-20 hidden md:block">
+        <button onclick="scrollNext()" class="swipe-btn px-3 py-2 rounded-xl flex items-center gap-2 transition">
+          <i class="fas fa-chevron-down text-xl animate-swipe-icon"></i>
+          <span class="text-sm font-semibold" style="color:var(--text)">
+            Swipe
+          </span>
+        </button>
+      </div>
+
+    </section>
+
+    <!-- About -->
+    <section id="about" class="pt-20 pb-24 relative">
+      <div class="max-w-6xl mx-auto px-6">
+
+        <!-- Title -->
+        <div class="text-center mb-12" data-aos-once="false" data-aos="fade-up" data-aos-duration="800">
+          <h2 class="text-3xl font-bold tracking-tight">Tentang Saya</h2>
+          <p class="mt-2 text-sm" style="color:var(--muted)">
+            Sekilas tentang siapa saya dan apa yang saya kerjakan.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-12 items-start">
+
+          <!-- Left Text -->
+          <div class="md:col-span-2 space-y-4" data-aos-once="false" data-aos="fade-right" data-aos-duration="900">
+            <p class="leading-relaxed text-base" style="color:var(--muted)">
+              Web Developer yang berfokus pada pembuatan website modern berbasis Laravel, Tailwind, dan JavaScript.</p>
+
+            <!-- Skills Grid -->
+            <div class="grid grid-cols-2 gap-2 text-sm mt-6">
+              <div class="px-3 py-2 rounded-lg bg-white/5 border border-white/10 backdrop-blur-sm">
+                • Laravel
+              </div>
+              <div class="px-3 py-2 rounded-lg bg-white/5 border border-white/10 backdrop-blur-sm">
+                • JavaScript (ES6+)
+              </div>
+              <div class="px-2 py-2 rounded-lg bg-white/5 border border-white/10 backdrop-blur-sm">
+                • Tailwind CSS
+              </div>
+              <div class="px-3 py-2 rounded-lg bg-white/5 border border-white/10 backdrop-blur-sm">
+                • API Integration
+              </div>
+              <div class="px-3 py-2 rounded-lg bg-white/5 border border-white/10 backdrop-blur-sm">
+                • UI/UX Implementation
+              </div>
+              <div class="px-3 py-2 rounded-lg bg-white/5 border border-white/10 backdrop-blur-sm">
+                • Responsive Design
+              </div>
+            </div>
+
+            <!-- Timeline Vertical -->
+            <div class="mt-10 relative">
+
+              <div class="absolute left-3 top-0 bottom-0 w-[2px] bg-white/10"></div>
+
+              <div class="ml-10 space-y-8">
+
+                <div class="relative" data-aos-once="false" data-aos="fade-up" data-aos-delay="100">
+                  <div
+                    class="absolute -left-10 top-1.5 w-4 h-4 rounded-full border-2 border-purple-400 bg-purple-500/20">
+                  </div>
+                  <h4 class="font-semibold">2021 — Mahasiswa Teknik Informatika</h4>
+                  <p class="text-sm mt-1" style="color:var(--muted)">
+                    Memulai perjalanan di dunia pemrograman dan pengembangan web.
+                  </p>
+                </div>
+
+                <div class="relative" data-aos-once="false" data-aos="fade-up" data-aos-delay="200">
+                  <div
+                    class="absolute -left-10 top-1.5 w-4 h-4 rounded-full border-2 border-purple-400 bg-purple-500/20">
+                  </div>
+                  <h4 class="font-semibold">2024 — Freelance Web Developer</h4>
+                  <p class="text-sm mt-1" style="color:var(--muted)">
+                    Membangun landing page, dashboard, dan sistem Laravel & Tailwind untuk berbagai klien.
+                  </p>
+                </div>
+
+                <div class="relative" data-aos-once="false" data-aos="fade-up" data-aos-delay="300">
+                  <div
+                    class="absolute -left-10 top-1.5 w-4 h-4 rounded-full border-2 border-purple-400 bg-purple-500/20">
+                  </div>
+                  <h4 class="font-semibold">Now — Web Developer</h4>
+                  <p class="text-sm mt-1" style="color:var(--muted)">
+                    Mengembangkan website cepat, smooth, dan pengalaman pengguna yang lebih hidup.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Quick Info Card -->
+          <div class="md:col-span-1" data-aos-once="false" data-aos="fade-left" data-aos-duration="900">
+            <div class="rounded-2xl p-6 backdrop-blur-xl border border-white/10 bg-white/5 shadow-xl">
+              <h3 class="font-semibold text-lg">Quick Info</h3>
+
+              <div class="mt-4 space-y-2 text-sm" style="color:var(--muted)">
+                <div>
+                  <strong class="text-white/90">Location:</strong><br>
+                  Banyuwangi, Indonesia
+                </div>
+                <div>
+                  <strong class="text-white/90">Availability:</strong><br>
+                  Freelance — Open to Work
+                </div>
+                <div>
+                  <strong class="text-white/90">Email:</strong><br>
+                  mohananta.1303@gmail.com
+                </div>
+              </div>
+
+              <!-- Download CV Button -->
+              <a href="cv.pdf" class="mt-6 flex items-center justify-center gap-2 px-4 py-2 rounded-xl font-semibold"
+                style="background:var(--accent);color:#000">
+
+                <!-- Icon Download -->
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"
+                  class="w-5 h-5">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                    d="M4 16v2a2 2 0 002 2h12a2 2 0 002-2v-2m-4-4l-4 4m0 0l-4-4m4 4V4" />
+                </svg>
+
+                Download CV
+              </a>
+
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <section id="skills" class="py-24 relative">
+      <div class="max-w-6xl mx-auto px-6 text-center">
+
+        <!-- Title -->
+        <div data-aos="fade-up" data-aos-once="false">
+          <h2 class="text-3xl font-extrabold mb-2">Skills</h2>
+          <p class="text-gray-500 dark:text-gray-400 mb-12">
+            Teknologi dan kemampuan utama yang saya kuasai dalam membangun aplikasi modern.
+          </p>
+        </div>
+
+        <!-- Skills Grid -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+
+          <!-- HTML / CSS -->
+          <div data-aos="zoom-in" data-aos-delay="50"
+            class="glass p-7 rounded-2xl shadow-lg border border-white/10 hover:border-white/20 transition-all group">
+            <div class="flex items-center gap-3 mb-4">
+              <div
+                class="w-10 h-10 rounded-xl flex items-center justify-center bg-[var(--accent)]/15 text-[var(--accent)] text-lg">
+                <i class="fa-solid fa-code"></i>
+              </div>
+              <h3 class="font-semibold text-lg">HTML & CSS</h3>
+            </div>
+            <div class="relative w-full h-3 bg-white/10 rounded-full overflow-hidden">
+              <div class="progress-bar h-full bg-[var(--accent)] rounded-full" data-value="92"></div>
+            </div>
+            <p class="text-sm mt-3 text-gray-400">Expert</p>
+          </div>
+
+          <!-- JavaScript -->
+          <div data-aos="zoom-in" data-aos-delay="100"
+            class="glass p-7 rounded-2xl shadow-lg border border-white/10 hover:border-white/20 transition-all group">
+            <div class="flex items-center gap-3 mb-4">
+              <div
+                class="w-10 h-10 rounded-xl flex items-center justify-center bg-[var(--accent2)]/15 text-[var(--accent2)] text-lg">
+                <i class="fa-brands fa-js"></i>
+              </div>
+              <h3 class="font-semibold text-lg">JavaScript</h3>
+            </div>
+            <div class="relative w-full h-3 bg-white/10 rounded-full overflow-hidden">
+              <div class="progress-bar h-full bg-[var(--accent2)] rounded-full" data-value="80"></div>
+            </div>
+            <p class="text-sm mt-3 text-gray-400">Advanced</p>
+          </div>
+
+          <!-- Tailwind -->
+          <div data-aos="zoom-in" data-aos-delay="150"
+            class="glass p-7 rounded-2xl shadow-lg border border-white/10 hover:border-white/20 transition-all group">
+            <div class="flex items-center gap-3 mb-4">
+              <div
+                class="w-10 h-10 rounded-xl flex items-center justify-center bg-[var(--accent)]/15 text-[var(--accent)] text-lg">
+                <i class="fa-solid fa-bolt"></i>
+              </div>
+              <h3 class="font-semibold text-lg">Tailwind CSS</h3>
+            </div>
+            <div class="relative w-full h-3 bg-white/10 rounded-full overflow-hidden">
+              <div class="progress-bar h-full bg-[var(--accent)] rounded-full" data-value="85"></div>
+            </div>
+            <p class="text-sm mt-3 text-gray-400">Advanced</p>
+          </div>
+
+          <!-- Laravel -->
+          <div data-aos="zoom-in" data-aos-delay="200"
+            class="glass p-7 rounded-2xl shadow-lg border border-white/10 hover:border-white/20 transition-all group">
+            <div class="flex items-center gap-3 mb-4">
+              <div
+                class="w-10 h-10 rounded-xl flex items-center justify-center bg-[var(--accent2)]/15 text-[var(--accent2)] text-lg">
+                <i class="fa-brands fa-laravel"></i>
+              </div>
+              <h3 class="font-semibold text-lg">Laravel</h3>
+            </div>
+            <div class="relative w-full h-3 bg-white/10 rounded-full overflow-hidden">
+              <div class="progress-bar h-full bg-[var(--accent2)] rounded-full" data-value="78"></div>
+            </div>
+            <p class="text-sm mt-3 text-gray-400">Intermediate</p>
+          </div>
+
+          <!-- UI/UX -->
+          <div data-aos="zoom-in" data-aos-delay="250"
+            class="glass p-7 rounded-2xl shadow-lg border border-white/10 hover:border-white/20 transition-all group">
+            <div class="flex items-center gap-3 mb-4">
+              <div
+                class="w-10 h-10 rounded-xl flex items-center justify-center bg-[var(--accent)]/15 text-[var(--accent)] text-lg">
+                <i class="fa-solid fa-pen-nib"></i>
+              </div>
+              <h3 class="font-semibold text-lg">UI / UX Design</h3>
+            </div>
+            <div class="relative w-full h-3 bg-white/10 rounded-full overflow-hidden">
+              <div class="progress-bar h-full bg-[var(--accent)] rounded-full" data-value="70"></div>
+            </div>
+            <p class="text-sm mt-3 text-gray-400">Good</p>
+          </div>
+
+          <!-- Database -->
+          <div data-aos="zoom-in" data-aos-delay="300"
+            class="glass p-7 rounded-2xl shadow-lg border border-white/10 hover:border-white/20 transition-all group">
+            <div class="flex items-center gap-3 mb-4">
+              <div
+                class="w-10 h-10 rounded-xl flex items-center justify-center bg-[var(--accent2)]/15 text-[var(--accent2)] text-lg">
+                <i class="fa-solid fa-database"></i>
+              </div>
+              <h3 class="font-semibold text-lg">MySQL & Database</h3>
+            </div>
+            <div class="relative w-full h-3 bg-white/10 rounded-full overflow-hidden">
+              <div class="progress-bar h-full bg-[var(--accent2)] rounded-full" data-value="78"></div>
+            </div>
+            <p class="text-sm mt-3 text-gray-400">Intermediate</p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Portfolio -->
+    <section id="portfolio" class="py-24 relative"
+      style="background:linear-gradient(180deg,transparent, rgba(0,0,0,0.03))">
+
+      <div class="max-w-6xl mx-auto px-6">
+
+        <!-- Centered Heading -->
+        <div class="text-center max-w-2xl mx-auto mb-14" data-aos-once="false" data-aos="fade-up">
+          <h2 class="text-3xl font-extrabold mb-2">Selected Projects</h2>
+          <p class="text-gray-500 dark:text-gray-400">
+            Project pilihan dengan desain modern, performa tinggi, dan interaksi halus.
+          </p>
+        </div>
+
+        <!-- Grid Cards -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8" data-aos-once="false" data-aos="fade-up"
+          data-aos-delay="50">
+
+          <!-- Card 1 -->
+          <article
+            class="group glass p-4 rounded-2xl shadow-lg transition-all duration-500 hover:-translate-y-2 hover:shadow-xl hover:rotate-[0.5deg]"
+            data-aos="fade-up" data-aos-once="false" data-aos-delay="100">
+
+            <div class="relative h-48 rounded-xl overflow-hidden">
+              <img src="public/ecommerce.png" alt="Project A"
+                class="w-full h-full object-cover transition duration-500 group-hover:scale-110">
+              <div class="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent"></div>
+            </div>
+
+            <h3 class="mt-4 font-semibold text-lg">E-Commerce Website</h3>
+            <p class="mt-2 text-sm leading-relaxed text-gray-500 dark:text-gray-400">
+              Platform toko online dengan fitur keranjang, checkout, dan manajemen produk.
+            </p>
+
+            <div class="mt-4 flex items-center justify-between">
+              <div class="text-xs text-gray-500 dark:text-gray-400">Laravel · Tailwind CSS · Vite</div>
+              <a href="https://github.com/mochananta/E-ecommerce" class="text-sm font-medium hover:underline">Lihat
+                →</a>
+            </div>
+          </article>
+
+          <!-- Card 2 -->
+          <article
+            class="group glass p-4 rounded-2xl shadow-lg transition-all duration-500 hover:-translate-y-2 hover:shadow-xl hover:rotate-[0.5deg]"
+            data-aos="fade-up" data-aos-once="false" data-aos-delay="180">
+
+            <div class="relative h-48 rounded-xl overflow-hidden">
+              <img src="public/company profile.png" alt="Project B"
+                class="w-full h-full object-cover transition duration-500 group-hover:scale-110">
+              <div class="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent"></div>
+            </div>
+
+            <h3 class="mt-4 font-semibold text-lg">Company Profile</h3>
+            <p class="mt-2 text-sm leading-relaxed text-gray-500 dark:text-gray-400">
+              Web app full-stack built with Laravel, Tailwind CSS & Vite.
+            </p>
+
+            <div class="mt-4 flex items-center justify-between">
+              <div class="text-xs text-gray-500 dark:text-gray-400">Laravel · Tailwind · Vite</div>
+              <a href="https://github.com/mochananta/Danauweb" class="text-sm font-medium hover:underline">Lihat →</a>
+            </div>
+          </article>
+
+          <!-- Card 3 -->
+          <article
+            class="group glass p-4 rounded-2xl shadow-lg transition-all duration-500 hover:-translate-y-2 hover:shadow-xl hover:rotate-[0.5deg]"
+            data-aos="fade-up" data-aos-once="false" data-aos-delay="260">
+
+            <div class="relative h-48 rounded-xl overflow-hidden">
+              <img src="public/management.png" alt="Project C"
+                class="w-full h-full object-cover transition duration-500 group-hover:scale-110">
+              <div class="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent"></div>
+            </div>
+
+            <h3 class="mt-4 font-semibold text-lg">Sekawan Technical Test</h3>
+            <p class="mt-2 text-sm leading-relaxed text-gray-500 dark:text-gray-400">
+              Proyek submission technical assessment yang mencakup implementasi CRUD, validasi, dan manajemen data. </p>
+
+            <div class="mt-4 flex items-center justify-between">
+              <div class="text-xs text-gray-500 dark:text-gray-400">PHP · SQL · Bootstrap</div>
+              <a href="https://github.com/mochananta/test-sekawan" class="text-sm font-medium hover:underline">Lihat
+                →</a>
+            </div>
+          </article>
+
+          <article
+            class="group glass p-4 rounded-2xl shadow-lg transition-all duration-500 hover:-translate-y-2 hover:shadow-xl hover:rotate-[0.5deg]"
+            data-aos="fade-up" data-aos-once="false" data-aos-delay="260">
+
+            <div class="relative h-48 rounded-xl overflow-hidden">
+              <img src="public/movie.png" alt="Project C"
+                class="w-full h-full object-cover transition duration-500 group-hover:scale-110">
+              <div class="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent"></div>
+            </div>
+
+            <h3 class="mt-4 font-semibold text-lg">STREAMLAb Movie App</h3>
+            <p class="mt-2 text-sm leading-relaxed text-gray-500 dark:text-gray-400">
+              Platform katalog film responsif dengan fitur carousel slider interaktif, daftar film populer, dan
+              integrasi trailer. </p>
+
+            <div class="mt-4 flex items-center justify-between">
+              <div class="text-xs text-gray-500 dark:text-gray-400">HTML · CSS · jQuery</div>
+              <a href="#" class="text-sm font-medium hover:underline">Lihat →</a>
+            </div>
+          </article>
+
+          <article
+            class="group glass p-4 rounded-2xl shadow-lg transition-all duration-500 hover:-translate-y-2 hover:shadow-xl hover:rotate-[0.5deg]"
+            data-aos="fade-up" data-aos-once="false" data-aos-delay="260">
+
+            <div class="relative h-48 rounded-xl overflow-hidden">
+              <img src="public/restaurant.png" alt="Project C"
+                class="w-full h-full object-cover transition duration-500 group-hover:scale-110">
+              <div class="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent"></div>
+            </div>
+
+            <h3 class="mt-4 font-semibold text-lg">Restaurant Catalogue PWA</h3>
+            <p class="mt-2 text-sm leading-relaxed text-gray-500 dark:text-gray-400">
+              Aplikasi Progressive Web App (PWA) yang menampilkan katalog restoran dengan fitur offline mode, caching,
+              dan optimasi performa. </p>
+
+            <div class="mt-4 flex items-center justify-between">
+              <div class="text-xs text-gray-500 dark:text-gray-400">JavaScript · Webpack · IndexedDB · PWA</div>
+              <a href="https://github.com/mochananta/restaurant-apps" class="text-sm font-medium hover:underline">Lihat
+                →</a>
+            </div>
+          </article>
+
+          <article
+            class="group glass p-4 rounded-2xl shadow-lg transition-all duration-500 hover:-translate-y-2 hover:shadow-xl hover:rotate-[0.5deg]"
+            data-aos="fade-up" data-aos-once="false" data-aos-delay="260">
+
+            <div class="relative h-48 rounded-xl overflow-hidden">
+              <img src="public/spp.png" alt="Project C"
+                class="w-full h-full object-cover transition duration-500 group-hover:scale-110">
+              <div class="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent"></div>
+            </div>
+
+            <h3 class="mt-4 font-semibold text-lg">Aplikasi Manajemen SPP SMUMA</h3>
+            <p class="mt-2 text-sm leading-relaxed text-gray-500 dark:text-gray-400">
+              Sistem informasi full-stack untuk mengelola pembayaran midtrans SPP siswa, dilengkapi fitur CRUD data,
+              otentikasi
+              multi-user, dan pencetakan laporan. </p>
+
+            <div class="mt-4 flex items-center justify-between">
+              <div class="text-xs text-gray-500 dark:text-gray-400">Laravel · MySQL · Bootstrap</div>
+              <a href="https://github.com/mochananta/spp-smuma.git" class="text-sm font-medium hover:underline">Lihat
+                →</a>
+            </div>
+          </article>
+
+          <article
+            class="group glass p-4 rounded-2xl shadow-lg transition-all duration-500 hover:-translate-y-2 hover:shadow-xl hover:rotate-[0.5deg]"
+            data-aos="fade-up" data-aos-once="false" data-aos-delay="260">
+
+            <div class="relative h-48 rounded-xl overflow-hidden">
+              <img src="public/ta.png" alt="Project C"
+                class="w-full h-full object-cover transition duration-500 group-hover:scale-110">
+              <div class="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent"></div>
+            </div>
+
+            <h3 class="mt-4 font-semibold text-lg">Sistem Manajemen Tugas Akhir</h3>
+            <p class="mt-2 text-sm leading-relaxed text-gray-500 dark:text-gray-400">
+              Sistem informasi multi-role untuk mengelola seluruh siklus Tugas Akhir, dari
+              pendaftaran, proses bimbingan, hingga penilaian akhir. </p>
+
+            <div class="mt-4 flex items-center justify-between">
+              <div class="text-xs text-gray-500 dark:text-gray-400">Laravel · PHP · MySQL · Multi-Role</div>
+              <a href="https://github.com/mochananta/SistemTA" class="text-sm font-medium hover:underline">Lihat →</a>
+            </div>
+          </article>
+
+          <article
+            class="group glass p-4 rounded-2xl shadow-lg transition-all duration-500 hover:-translate-y-2 hover:shadow-xl hover:rotate-[0.5deg]"
+            data-aos="fade-up" data-aos-once="false" data-aos-delay="260">
+
+            <div class="relative h-48 rounded-xl overflow-hidden">
+              <img src="public/news.png" alt="Project C"
+                class="w-full h-full object-cover transition duration-500 group-hover:scale-110">
+              <div class="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent"></div>
+            </div>
+
+            <h3 class="mt-4 font-semibold text-lg">Website Lembaga Pers Mahasiswa (LPM)</h3>
+            <p class="mt-2 text-sm leading-relaxed text-gray-500 dark:text-gray-400">
+              Website resmi organisasi kampus, dilengkapi dengan fungsionalitas Content Management System (CMS) untuk
+              mengelola publikasi berita, artikel, dan event secara mandiri. </p>
+
+            <div class="mt-4 flex items-center justify-between">
+              <div class="text-xs text-gray-500 dark:text-gray-400">React · CMS · Supabase · Tailwind</div>
+              <a href="#" class="text-sm font-medium hover:underline">Lihat →</a>
+            </div>
+          </article>
+
+          <article
+            class="group glass p-4 rounded-2xl shadow-lg transition-all duration-500 hover:-translate-y-2 hover:shadow-xl hover:rotate-[0.5deg]"
+            data-aos="fade-up" data-aos-once="false" data-aos-delay="260">
+
+            <div class="relative h-48 rounded-xl overflow-hidden">
+              <img src="public/ES6.png" alt="Project C"
+                class="w-full h-full object-cover transition duration-500 group-hover:scale-110">
+              <div class="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent"></div>
+            </div>
+
+            <h3 class="mt-4 font-semibold text-lg">Katalog Video Belajar Coding</h3>
+            <p class="mt-2 text-sm leading-relaxed text-gray-500 dark:text-gray-400">
+              Aplikasi web katalog video pembelajaran (YouTube), dibangun dengan modern JavaScript (ES6+), Webpack, dan
+              desain responsif Bootstrap 5. </p>
+
+            <div class="mt-4 flex items-center justify-between">
+              <div class="text-xs text-gray-500 dark:text-gray-400">ES6+ · Webpack · Bootstrap 5</div>
+              <a href="#" class="text-sm font-medium hover:underline">Lihat →</a>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <footer class="py-12 text-center" style="background:linear-gradient(180deg,transparent, rgba(0,0,0,0.03))">
+      <p class="text-sm" style="color:var(--muted)">
+        © <span id="year"></span> <strong>Moh. Ananta</strong>
+        <span class="opacity-70">Dark Animated Portfolio</span>
+      </p>
+
+    </footer>
+
+  </main>
+
+  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+  <script src="https://unpkg.com/@dotlottie/player-component@latest/dist/dotlottie-player.js"></script>
+  <script src="script.js" defer></script>
+  
+  <button id="toTop" class="hidden fixed bottom-6 right-6 w-12 h-12 rounded-full 
+  bg-white/10 backdrop-blur-md border border-white/20
+  flex items-center justify-center text-white text-xl
+  shadow-lg cursor-pointer transition-all duration-300 
+  hover:bg-white/20 hover:shadow-xl" aria-label="Scroll to top">
+    ↑
+  </button>
+
+</body>
+
+</html>
