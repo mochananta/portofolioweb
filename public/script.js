@@ -230,3 +230,15 @@ toTop.addEventListener("click", () => {
         behavior: "smooth"
     });
 });
+
+function openCert(src) {
+    document.getElementById('certImage').src = src;
+    document.getElementById('certModal').classList.remove('hidden');
+    document.getElementById('certModal').classList.add('flex');
+}
+
+function closeCert() {
+    document.getElementById('certModal').classList.add('hidden');
+    document.getElementById('certModal').classList.remove('flex');
+}
+

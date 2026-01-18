@@ -142,3 +142,60 @@
         opacity: 0 !important;
         transform: scale(0.75) !important;
     }
+
+    .skill-card {
+  background: rgba(255,255,255,0.04);
+  backdrop-filter: blur(16px);
+  border-radius: 1.25rem;
+  padding: 2rem;
+  box-shadow: 0 20px 40px rgba(0,0,0,.35);
+  transition: transform .4s ease, box-shadow .4s ease;
+}
+
+.skill-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 30px 60px rgba(139,92,246,.25);
+}
+
+.skill-card h3 {
+  margin-top: 1rem;
+  font-weight: 600;
+}
+
+.skill-card p {
+  font-size: .85rem;
+  color: var(--muted);
+  margin-top: .25rem;
+}
+
+/* Circular Progress */
+.circle {
+  --size: 120px;
+  --percent: 0;
+  width: var(--size);
+  height: var(--size);
+  border-radius: 50%;
+  margin: 0 auto;
+  display: grid;
+  place-items: center;
+  background:
+    conic-gradient(
+      var(--accent) calc(var(--percent) * 1%),
+      rgba(255,255,255,0.08) 0
+    );
+}
+
+.circle::before {
+  content: "";
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  background: #0b0b0b;
+  position: absolute;
+}
+
+.circle span {
+  position: relative;
+  font-weight: 700;
+  font-size: 1.1rem;
+}

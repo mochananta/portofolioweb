@@ -3,16 +3,45 @@
 
 <head>
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <meta name="google-site-verification" content="DWyWXj-GO1R17Al5ePQ9q54EbNPbkh04kBse35XvHzg" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <!-- SEO BASIC -->
+  <title>Moch Ananta | Web Developer Laravel & Frontend</title>
+
   <meta name="description"
-    content="Portofolio Moch. Ananta, Web Developer Laravel & Frontend. Berpengalaman membangun sistem web, dashboard admin, dan aplikasi berbasis Tailwind." />
-  <meta name="keywords" content="Moh Ananta, Moch Ananta, Web Developer, Laravel Developer, Portfolio Moh Ananta" />
+    content="Portofolio Moch Ananta, Web Developer Laravel & Frontend. Berpengalaman membangun website modern, dashboard admin, dan sistem berbasis Tailwind CSS." />
+
+  <meta name="keywords"
+    content="Moch Ananta, Moh Ananta, Web Developer, Laravel Developer, Frontend Developer, Portfolio Web Developer" />
 
   <meta name="author" content="Moch Ananta" />
   <meta name="robots" content="index, follow" />
-  <title>Moch Ananta - Portfolio</title>
 
+  <!-- GOOGLE VERIFICATION -->
+  <meta name="google-site-verification" content="DWyWXj-GO1R17Al5ePQ9q54EbNPbkh04kBse35XvHzg" />
+
+  <!-- CANONICAL (WAJIB SEO) -->
+  <link rel="canonical" href="https://mochananta.vercel.app/" />
+
+  <!-- FAVICON -->
+  <link rel="icon" href="assets/img/software-engineer.png" type="image/png" />
+  <link rel="apple-touch-icon" href="assets/img/software-engineer.png" />
+
+  <!-- OPEN GRAPH (SOCIAL PREVIEW) -->
+  <meta property="og:title" content="Moch Ananta | Web Developer Portfolio" />
+  <meta property="og:description"
+    content="Web Developer Laravel & Frontend. Fokus pada website modern, performa tinggi, dan UI elegan." />
+  <meta property="og:image" content="https://mochananta.vercel.app/assets/img/og-image.png" />
+  <meta property="og:url" content="https://mochananta.vercel.app/" />
+  <meta property="og:type" content="website" />
+
+  <!-- TWITTER CARD -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Moch Ananta | Web Developer" />
+  <meta name="twitter:description" content="Portfolio Web Developer Laravel & Frontend — clean, fast, modern." />
+  <meta name="twitter:image" content="https://mochananta.vercel.app/assets/img/og-image.png" />
+
+  <!-- STYLES & LIBRARIES -->
   <script src="https://cdn.tailwindcss.com"></script>
 
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
@@ -24,16 +53,32 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
 
   <script src="https://cdn.jsdelivr.net/npm/@studio-freight/lenis@1.0.28/dist/lenis.min.js"></script>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity=""
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
     crossorigin="anonymous" referrerpolicy="no-referrer" />
-
-
 </head>
+
 
 <body class="relative overflow-x-hidden">
 
+  <div id="preloader" style="
+    position:fixed;
+    inset:0;
+    z-index:99999;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    background:#f8fafc;
+  ">
+
+    <dotlottie-wc src="https://lottie.host/c0f19d19-e18b-473c-bed5-f65d1b218ef3/NLVZUuDRUy.lottie" autoplay loop
+      style="width:200px;height:200px">
+    </dotlottie-wc>
+
+  </div>
+
   <div id="cat-cursor" class="pointer-events-none fixed left-0 top-0 z-[9999] w-5 h-5">
-    <img src="paw.png" class="w-full h-full object-contain" />
+    <!-- <img src="paw.png" class="w-full h-full object-contain" /> -->
   </div>
 
   <canvas id="particles"></canvas>
@@ -50,20 +95,6 @@
       </a>
 
       <div class="flex items-center gap-4">
-        <!-- Language Switcher -->
-        <div class="flex items-center gap-2 ml-3">
-          <button id="langToggle"
-            class="px-3 py-2 text-sm font-semibold rounded-lg flex items-center gap-2 transition-all duration-300 hover:bg-white/10 border border-white/10">
-
-            <!-- Globe Icon -->
-            <svg class="w-4 h-4 opacity-80" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
-              <path
-                d="M12 3a9 9 0 0 0 0 18a9 9 0 0 0 0-18zm0 0c2.5 2.5 2.5 12.5 0 15m0-15c-2.5 2.5-2.5 12.5 0 15M3 12h18" />
-            </svg>
-
-            <span id="langLabel">ID</span>
-          </button>
-        </div>
 
         <button id="themeToggle"
           class="relative w-16 h-9 flex items-center rounded-full transition-all duration-300 p-1"
@@ -122,15 +153,19 @@
           class="z-10 text-center md:text-left order-2 md:order-none">
 
           <h1
-            class="text-3xl sm:text-4xl font-extrabold leading-tight flex md:flex items-center gap-2 flex-wrap justify-center md:justify-start">
+            class="text-3xl sm:text-4xl font-extrabold leading-tight flex items-center gap-2 flex-wrap justify-center md:justify-start">
+
             Hi there
-            <span style="color:var(--accent);font-weight:700" class="flex items-center gap-2">
+
+            <span class="flex items-center gap-2 text-[var(--accent)] font-bold">
               Moh. Ananta
-              <img src="Running Cat.gif" class="w-16 h-16 object-none inline-block">
+              <dotlottie-wc src="https://lottie.host/f5801e8c-94ba-4df4-9ce1-4e10b3c994f2/ONp39L8sPS.json" autoplay loop
+                class="w-[52px] h-[52px] sm:w-[68px] sm:h-[68px] md:w-[80px] md:h-[80px] pointer-events-none translate-y-[2px]">
+              </dotlottie-wc>
             </span>
           </h1>
 
-          <p class="mt-2" style="color:var(--muted)">
+          <p class="mt-0 max-w-xl" style="color:var(--muted)">
             Saya adalah Web Developer yang berfokus pada pembuatan aplikasi modern dengan Laravel, Tailwind, dan
             JavaScript.
             Saya mengembangkan sistem yang cepat, rapi, responsif, dan mudah digunakan.
@@ -168,7 +203,7 @@
              rounded-2xl overflow-hidden relative flex items-center justify-center 
              bg-gray-200/10 backdrop-blur">
 
-              <img src="profil.png" alt="Foto Profil" class="w-full h-full object-cover object-center" />
+              <img src="assets/img/profil.png" alt="Foto Profil" class="w-full h-full object-cover object-center" />
             </div>
           </div>
         </div>
@@ -183,6 +218,34 @@
         </button>
       </div>
 
+    </section>
+
+    <!-- Music -->
+    <section id="music" class="pt-20 pb-24 relative">
+      <div class="max-w-6xl mx-auto px-6">
+
+        <!-- Title -->
+        <div class="text-center mb-12" data-aos="fade-up" data-aos-once="false" data-aos-duration="800">
+
+          <h2 class="text-3xl font-bold tracking-tight">Coding Playlist</h2>
+          <p class="mt-2 text-sm" style="color:var(--muted)">
+            Lagu favorit yang biasa saya dengarkan saat ngoding.
+          </p>
+        </div>
+
+        <!-- Spotify Player -->
+        <div class="max-w-4xl mx-auto" data-aos="fade-up" data-aos-once="false" data-aos-duration="900"
+          data-aos-delay="100">
+
+          <div class="rounded-2xl overflow-hidden bg-[#121212] shadow-xl">
+            <iframe src="https://open.spotify.com/embed/playlist/37i9dQZF1DX8Uebhn9wzrS" width="100%" height="380"
+              scrolling="no" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture">
+            </iframe>
+          </div>
+
+        </div>
+
+      </div>
     </section>
 
     <!-- About -->
@@ -287,7 +350,8 @@
               </div>
 
               <!-- Download CV Button -->
-              <a href="resume cv.pdf" class="mt-6 flex items-center justify-center gap-2 px-4 py-2 rounded-xl font-semibold"
+              <a href="resume cv.pdf"
+                class="mt-6 flex items-center justify-center gap-2 px-4 py-2 rounded-xl font-semibold"
                 style="background:var(--accent);color:#000">
 
                 <!-- Icon Download -->
@@ -307,119 +371,200 @@
       </div>
     </section>
 
-    <section id="skills" class="py-24 relative">
+    <!-- Skills -->
+    <!-- <section id="skills" class="py-24 relative">
       <div class="max-w-6xl mx-auto px-6 text-center">
-
-        <!-- Title -->
         <div data-aos="fade-up" data-aos-once="false">
-          <h2 class="text-3xl font-extrabold mb-2">Skills</h2>
-          <p class="text-gray-500 dark:text-gray-400 mb-12">
-            Teknologi dan kemampuan utama yang saya kuasai dalam membangun aplikasi modern.
+          <h2 class="text-3xl font-bold tracking-tight">Skills</h2>
+          <p class="mt-2 text-sm" style="color:var(--muted)">
+            Teknologi yang sering saya gunakan dalam membangun website modern.
           </p>
         </div>
-
-        <!-- Skills Grid -->
-        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-
-          <!-- HTML / CSS -->
-          <div data-aos="zoom-in" data-aos-delay="50"
-            class="glass p-7 rounded-2xl shadow-lg border border-white/10 hover:border-white/20 transition-all group">
-            <div class="flex items-center gap-3 mb-4">
-              <div
-                class="w-10 h-10 rounded-xl flex items-center justify-center bg-[var(--accent)]/15 text-[var(--accent)] text-lg">
-                <i class="fa-solid fa-code"></i>
-              </div>
-              <h3 class="font-semibold text-lg">HTML & CSS</h3>
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10 mt-14">
+          <div data-aos="zoom-in" class="skill-card">
+            <div class="circle" data-percent="92">
+              <span>92%</span>
             </div>
-            <div class="relative w-full h-3 bg-white/10 rounded-full overflow-hidden">
-              <div class="progress-bar h-full bg-[var(--accent)] rounded-full" data-value="92"></div>
-            </div>
-            <p class="text-sm mt-3 text-gray-400">Expert</p>
+            <h3>HTML & CSS</h3>
+            <p>Expert</p>
           </div>
 
-          <!-- JavaScript -->
-          <div data-aos="zoom-in" data-aos-delay="100"
-            class="glass p-7 rounded-2xl shadow-lg border border-white/10 hover:border-white/20 transition-all group">
-            <div class="flex items-center gap-3 mb-4">
-              <div
-                class="w-10 h-10 rounded-xl flex items-center justify-center bg-[var(--accent2)]/15 text-[var(--accent2)] text-lg">
-                <i class="fa-brands fa-js"></i>
-              </div>
-              <h3 class="font-semibold text-lg">JavaScript</h3>
+          <div data-aos="zoom-in" data-aos-delay="100" class="skill-card">
+            <div class="circle" data-percent="85">
+              <span>85%</span>
             </div>
-            <div class="relative w-full h-3 bg-white/10 rounded-full overflow-hidden">
-              <div class="progress-bar h-full bg-[var(--accent2)] rounded-full" data-value="80"></div>
-            </div>
-            <p class="text-sm mt-3 text-gray-400">Advanced</p>
+            <h3>Tailwind CSS</h3>
+            <p>Advanced</p>
           </div>
 
-          <!-- Tailwind -->
-          <div data-aos="zoom-in" data-aos-delay="150"
-            class="glass p-7 rounded-2xl shadow-lg border border-white/10 hover:border-white/20 transition-all group">
-            <div class="flex items-center gap-3 mb-4">
-              <div
-                class="w-10 h-10 rounded-xl flex items-center justify-center bg-[var(--accent)]/15 text-[var(--accent)] text-lg">
-                <i class="fa-solid fa-bolt"></i>
-              </div>
-              <h3 class="font-semibold text-lg">Tailwind CSS</h3>
+          <div data-aos="zoom-in" data-aos-delay="200" class="skill-card">
+            <div class="circle" data-percent="80">
+              <span>80%</span>
             </div>
-            <div class="relative w-full h-3 bg-white/10 rounded-full overflow-hidden">
-              <div class="progress-bar h-full bg-[var(--accent)] rounded-full" data-value="85"></div>
-            </div>
-            <p class="text-sm mt-3 text-gray-400">Advanced</p>
+            <h3>JavaScript</h3>
+            <p>Advanced</p>
           </div>
 
-          <!-- Laravel -->
-          <div data-aos="zoom-in" data-aos-delay="200"
-            class="glass p-7 rounded-2xl shadow-lg border border-white/10 hover:border-white/20 transition-all group">
-            <div class="flex items-center gap-3 mb-4">
-              <div
-                class="w-10 h-10 rounded-xl flex items-center justify-center bg-[var(--accent2)]/15 text-[var(--accent2)] text-lg">
-                <i class="fa-brands fa-laravel"></i>
-              </div>
-              <h3 class="font-semibold text-lg">Laravel</h3>
+          <div data-aos="zoom-in" data-aos-delay="300" class="skill-card">
+            <div class="circle" data-percent="78">
+              <span>78%</span>
             </div>
-            <div class="relative w-full h-3 bg-white/10 rounded-full overflow-hidden">
-              <div class="progress-bar h-full bg-[var(--accent2)] rounded-full" data-value="78"></div>
-            </div>
-            <p class="text-sm mt-3 text-gray-400">Intermediate</p>
+            <h3>Laravel</h3>
+            <p>Intermediate</p>
           </div>
 
-          <!-- UI/UX -->
-          <div data-aos="zoom-in" data-aos-delay="250"
-            class="glass p-7 rounded-2xl shadow-lg border border-white/10 hover:border-white/20 transition-all group">
-            <div class="flex items-center gap-3 mb-4">
-              <div
-                class="w-10 h-10 rounded-xl flex items-center justify-center bg-[var(--accent)]/15 text-[var(--accent)] text-lg">
-                <i class="fa-solid fa-pen-nib"></i>
-              </div>
-              <h3 class="font-semibold text-lg">UI / UX Design</h3>
+          <div data-aos="zoom-in" data-aos-delay="400" class="skill-card">
+            <div class="circle" data-percent="70">
+              <span>70%</span>
             </div>
-            <div class="relative w-full h-3 bg-white/10 rounded-full overflow-hidden">
-              <div class="progress-bar h-full bg-[var(--accent)] rounded-full" data-value="70"></div>
-            </div>
-            <p class="text-sm mt-3 text-gray-400">Good</p>
+            <h3>UI / UX</h3>
+            <p>Good</p>
           </div>
 
-          <!-- Database -->
-          <div data-aos="zoom-in" data-aos-delay="300"
-            class="glass p-7 rounded-2xl shadow-lg border border-white/10 hover:border-white/20 transition-all group">
-            <div class="flex items-center gap-3 mb-4">
-              <div
-                class="w-10 h-10 rounded-xl flex items-center justify-center bg-[var(--accent2)]/15 text-[var(--accent2)] text-lg">
-                <i class="fa-solid fa-database"></i>
-              </div>
-              <h3 class="font-semibold text-lg">MySQL & Database</h3>
+          <div data-aos="zoom-in" data-aos-delay="500" class="skill-card">
+            <div class="circle" data-percent="75">
+              <span>75%</span>
             </div>
-            <div class="relative w-full h-3 bg-white/10 rounded-full overflow-hidden">
-              <div class="progress-bar h-full bg-[var(--accent2)] rounded-full" data-value="78"></div>
-            </div>
-            <p class="text-sm mt-3 text-gray-400">Intermediate</p>
+            <h3>MySQL</h3>
+            <p>Intermediate</p>
           </div>
 
         </div>
       </div>
+    </section> -->
+
+    <section id="certificates" class="py-24 relative">
+      <div class="max-w-6xl mx-auto px-6 text-center">
+
+        <!-- Title -->
+        <div data-aos="fade-up">
+          <h2 class="text-3xl font-extrabold mb-2">Certificates</h2>
+          <p class="text-gray-500 dark:text-gray-400 mb-12">
+            Sertifikat kompetensi dan kelulusan yang mendukung keahlian saya. </p>
+        </div>
+
+        <!-- Certificates Grid -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+
+          <!-- Certificate Card -->
+          <div data-aos="zoom-in" data-aos-delay="50"
+            class="glass p-7 rounded-2xl shadow-lg border border-white/10 hover:border-white/20 transition-all group text-left">
+
+            <div class="flex items-center gap-3 mb-4">
+              <div
+                class="w-10 h-10 rounded-xl flex items-center justify-center bg-[var(--accent)]/15 text-[var(--accent)]">
+                <i class="fa-solid fa-award"></i>
+              </div>
+              <h3 class="font-semibold text-lg">Front-End Web Developer Expert</h3>
+            </div>
+
+            <p class="text-sm text-gray-400 mb-4">
+              Pengembangan front-end web modern.
+            </p>
+
+            <div class="flex items-center justify-between text-sm">
+              <span class="text-gray-500">Dicoding · 2023</span>
+              <button onclick="openCert('assets/certificates/Menjadi Front-End Web Developer Expert_page-0001.jpg')"
+                class="text-[var(--accent)] font-medium hover:opacity-80 focus:outline-none">
+                Lihat Sertifikat
+              </button>
+            </div>
+          </div>
+
+          <!-- Certificate Card -->
+          <div data-aos="zoom-in" data-aos-delay="100"
+            class="glass p-7 rounded-2xl shadow-lg border border-white/10 hover:border-white/20 transition-all group text-left">
+
+            <div class="flex items-center gap-3 mb-4">
+              <div
+                class="w-10 h-10 rounded-xl flex items-center justify-center bg-[var(--accent2)]/15 text-[var(--accent2)]">
+                <i class="fa-brands fa-laravel"></i>
+              </div>
+              <h3 class="font-semibold text-lg">Dicoding x Kampus Merdeka (MSIB)</h3>
+            </div>
+
+            <p class="text-sm text-gray-400 mb-4">
+              Program Front-End dan Back-End Web berbasis project.
+            </p>
+
+            <div class="flex items-center justify-between text-sm">
+              <span class="text-gray-500">Dicoding · 2023</span>
+              <button onclick="openCert('assets/certificates/Moh Ananta - Sertifikat Kompetensi_page-0001.jpg')"
+                class="text-[var(--accent2)] font-medium hover:opacity-80 focus:outline-none">
+                Lihat Sertifikat
+              </button>
+            </div>
+          </div>
+
+          <!-- Certificate Card -->
+          <div data-aos="zoom-in" data-aos-delay="100"
+            class="glass p-7 rounded-2xl shadow-lg border border-white/10 hover:border-white/20 transition-all group text-left">
+
+            <div class="flex items-center gap-3 mb-4">
+              <div
+                class="w-10 h-10 rounded-xl flex items-center justify-center bg-[var(--accent2)]/15 text-[var(--accent2)]">
+                <i class="fa-brands fa-laravel"></i>
+              </div>
+              <h3 class="font-semibold text-lg">BNSP – Junior Web Developer</h3>
+            </div>
+
+            <p class="text-sm text-gray-400 mb-4">
+              Sertifikasi kompetensi nasional Junior Web Developer.
+            </p>
+
+            <div class="flex items-center justify-between text-sm">
+              <span class="text-gray-500">BNSP · 2024</span>
+              <button onclick="openCert('assets/certificates/vsga2.jpg')"
+                class="text-[var(--accent)] font-medium hover:opacity-80 focus:outline-none">
+                Lihat Sertifikat
+              </button>
+            </div>
+          </div>
+
+          <!-- Certificate Card -->
+          <!-- <div data-aos="zoom-in" data-aos-delay="100"
+            class="glass p-7 rounded-2xl shadow-lg border border-white/10 hover:border-white/20 transition-all group text-left">
+
+            <div class="flex items-center gap-3 mb-4">
+              <div
+                class="w-10 h-10 rounded-xl flex items-center justify-center bg-[var(--accent2)]/15 text-[var(--accent2)]">
+                <i class="fa-brands fa-laravel"></i>
+              </div>
+              <h3 class="font-semibold text-lg">Laravel Backend</h3>
+            </div>
+
+            <p class="text-sm text-gray-400 mb-4">
+              Backend development dengan Laravel, MVC, dan REST API.
+            </p>
+
+            <div class="flex items-center justify-between text-sm">
+              <span class="text-gray-500">BuildWith Angga · 2023</span>
+              <button onclick="openCert('assets/certificates/Menjadi Front-End Web Developer Expert_page-0001.jpg')"
+                class="text-[var(--accent2)] font-medium hover:opacity-80 focus:outline-none">
+                Lihat Sertifikat
+              </button>
+            </div>
+          </div> -->
+
+        </div>
+      </div>
     </section>
+
+    <!-- Certificate Modal -->
+    <div id="certModal" class="fixed inset-0 z-50 hidden items-center justify-center bg-black/70 backdrop-blur-sm">
+
+      <div class="relative max-w-3xl w-full mx-4 glass p-4 rounded-2xl border border-white/10">
+
+        <!-- Close Button -->
+        <button onclick="closeCert()"
+          class="absolute top-3 right-3 w-9 h-9 flex items-center justify-center rounded-full bg-white/10 hover:bg-white/20 transition">
+          ✕
+        </button>
+
+        <!-- Image -->
+        <img id="certImage" src="" alt="Certificate Preview" class="w-full rounded-xl object-contain max-h-[80vh]">
+      </div>
+    </div>
 
     <!-- Portfolio -->
     <section id="portfolio" class="py-24 relative"
@@ -441,11 +586,11 @@
 
           <!-- Card 1 -->
           <article
-            class="group glass p-4 rounded-2xl shadow-lg transition-all duration-500 hover:-translate-y-2 hover:shadow-xl hover:rotate-[0.5deg]"
+            class="portfolio-item group glass p-4 rounded-2xl shadow-lg transition-all duration-500 hover:-translate-y-2 hover:shadow-xl hover:rotate-[0.5deg]"
             data-aos="fade-up" data-aos-once="false" data-aos-delay="100">
 
             <div class="relative h-48 rounded-xl overflow-hidden">
-              <img src="ecommerce.png" alt="Project A"
+              <img src="assets/img/ecommerce.png" alt="Project A"
                 class="w-full h-full object-cover transition duration-500 group-hover:scale-110">
               <div class="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent"></div>
             </div>
@@ -464,11 +609,11 @@
 
           <!-- Card 2 -->
           <article
-            class="group glass p-4 rounded-2xl shadow-lg transition-all duration-500 hover:-translate-y-2 hover:shadow-xl hover:rotate-[0.5deg]"
+            class="portfolio-item group glass p-4 rounded-2xl shadow-lg transition-all duration-500 hover:-translate-y-2 hover:shadow-xl hover:rotate-[0.5deg]"
             data-aos="fade-up" data-aos-once="false" data-aos-delay="180">
 
             <div class="relative h-48 rounded-xl overflow-hidden">
-              <img src="company profile.png" alt="Project B"
+              <img src="assets/img/company profile.png" alt="Project B"
                 class="w-full h-full object-cover transition duration-500 group-hover:scale-110">
               <div class="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent"></div>
             </div>
@@ -486,11 +631,11 @@
 
           <!-- Card 3 -->
           <article
-            class="group glass p-4 rounded-2xl shadow-lg transition-all duration-500 hover:-translate-y-2 hover:shadow-xl hover:rotate-[0.5deg]"
+            class="portfolio-item group glass p-4 rounded-2xl shadow-lg transition-all duration-500 hover:-translate-y-2 hover:shadow-xl hover:rotate-[0.5deg]"
             data-aos="fade-up" data-aos-once="false" data-aos-delay="260">
 
             <div class="relative h-48 rounded-xl overflow-hidden">
-              <img src="management.png" alt="Project C"
+              <img src="assets/img/management.png" alt="Project C"
                 class="w-full h-full object-cover transition duration-500 group-hover:scale-110">
               <div class="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent"></div>
             </div>
@@ -507,11 +652,11 @@
           </article>
 
           <article
-            class="group glass p-4 rounded-2xl shadow-lg transition-all duration-500 hover:-translate-y-2 hover:shadow-xl hover:rotate-[0.5deg]"
+            class="portfolio-item group glass p-4 rounded-2xl shadow-lg transition-all duration-500 hover:-translate-y-2 hover:shadow-xl hover:rotate-[0.5deg]"
             data-aos="fade-up" data-aos-once="false" data-aos-delay="260">
 
             <div class="relative h-48 rounded-xl overflow-hidden">
-              <img src="movie.png" alt="Project C"
+              <img src="assets/img/movie.png" alt="Project C"
                 class="w-full h-full object-cover transition duration-500 group-hover:scale-110">
               <div class="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent"></div>
             </div>
@@ -528,11 +673,11 @@
           </article>
 
           <article
-            class="group glass p-4 rounded-2xl shadow-lg transition-all duration-500 hover:-translate-y-2 hover:shadow-xl hover:rotate-[0.5deg]"
+            class="portfolio-item group glass p-4 rounded-2xl shadow-lg transition-all duration-500 hover:-translate-y-2 hover:shadow-xl hover:rotate-[0.5deg]"
             data-aos="fade-up" data-aos-once="false" data-aos-delay="260">
 
             <div class="relative h-48 rounded-xl overflow-hidden">
-              <img src="restaurant.png" alt="Project C"
+              <img src="assets/img/restaurant.png" alt="Project C"
                 class="w-full h-full object-cover transition duration-500 group-hover:scale-110">
               <div class="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent"></div>
             </div>
@@ -550,11 +695,11 @@
           </article>
 
           <article
-            class="group glass p-4 rounded-2xl shadow-lg transition-all duration-500 hover:-translate-y-2 hover:shadow-xl hover:rotate-[0.5deg]"
+            class="portfolio-item group glass p-4 rounded-2xl shadow-lg transition-all duration-500 hover:-translate-y-2 hover:shadow-xl hover:rotate-[0.5deg]"
             data-aos="fade-up" data-aos-once="false" data-aos-delay="260">
 
             <div class="relative h-48 rounded-xl overflow-hidden">
-              <img src="spp.png" alt="Project C"
+              <img src="assets/img/spp.png" alt="Project C"
                 class="w-full h-full object-cover transition duration-500 group-hover:scale-110">
               <div class="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent"></div>
             </div>
@@ -573,11 +718,11 @@
           </article>
 
           <article
-            class="group glass p-4 rounded-2xl shadow-lg transition-all duration-500 hover:-translate-y-2 hover:shadow-xl hover:rotate-[0.5deg]"
+            class="portfolio-item group glass p-4 rounded-2xl shadow-lg transition-all duration-500 hover:-translate-y-2 hover:shadow-xl hover:rotate-[0.5deg]"
             data-aos="fade-up" data-aos-once="false" data-aos-delay="260">
 
             <div class="relative h-48 rounded-xl overflow-hidden">
-              <img src="ta.png" alt="Project C"
+              <img src="assets/img/ta.png" alt="Project C"
                 class="w-full h-full object-cover transition duration-500 group-hover:scale-110">
               <div class="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent"></div>
             </div>
@@ -594,11 +739,11 @@
           </article>
 
           <article
-            class="group glass p-4 rounded-2xl shadow-lg transition-all duration-500 hover:-translate-y-2 hover:shadow-xl hover:rotate-[0.5deg]"
+            class="portfolio-item group glass p-4 rounded-2xl shadow-lg transition-all duration-500 hover:-translate-y-2 hover:shadow-xl hover:rotate-[0.5deg]"
             data-aos="fade-up" data-aos-once="false" data-aos-delay="260">
 
             <div class="relative h-48 rounded-xl overflow-hidden">
-              <img src="news.png" alt="Project C"
+              <img src="assets/img/news.png" alt="Project C"
                 class="w-full h-full object-cover transition duration-500 group-hover:scale-110">
               <div class="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent"></div>
             </div>
@@ -615,11 +760,11 @@
           </article>
 
           <article
-            class="group glass p-4 rounded-2xl shadow-lg transition-all duration-500 hover:-translate-y-2 hover:shadow-xl hover:rotate-[0.5deg]"
+            class="portfolio-item group glass p-4 rounded-2xl shadow-lg transition-all duration-500 hover:-translate-y-2 hover:shadow-xl hover:rotate-[0.5deg]"
             data-aos="fade-up" data-aos-once="false" data-aos-delay="260">
 
             <div class="relative h-48 rounded-xl overflow-hidden">
-              <img src="ES6.png" alt="Project C"
+              <img src="assets/img/ES6.png" alt="Project C"
                 class="w-full h-full object-cover transition duration-500 group-hover:scale-110">
               <div class="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent"></div>
             </div>
@@ -636,30 +781,73 @@
           </article>
 
         </div>
+        <div class="mt-10 text-center">
+          <button id="togglePortfolio" class="inline-flex items-center gap-2 px-4 py-2 rounded-full text-sm font-medium
+           bg-[var(--accent)] text-black
+           hover:opacity-90 transition">
+            Lihat Semua Project
+          </button>
+        </div>
       </div>
     </section>
 
-    <footer class="py-12 text-center" style="background:linear-gradient(180deg,transparent, rgba(0,0,0,0.03))">
-      <p class="text-sm" style="color:var(--muted)">
-        © <span id="year"></span> <strong>Moh. Ananta</strong>
-        <span class="opacity-70">Dark Animated Portfolio</span>
-      </p>
+    <footer class="py-10" style="background:linear-gradient(180deg,transparent, rgba(0,0,0,0.03))">
 
+      <div class="max-w-6xl mx-auto px-6 text-center">
+
+        <p class="text-sm" style="color:var(--muted)">
+          © <span id="year"></span> <strong>Moh. Ananta</strong>
+          <span class="opacity-70">Dark Animated Portfolio</span>
+        </p>
+
+      </div>
     </footer>
 
   </main>
 
   <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
-  <script src="https://unpkg.com/@dotlottie/player-component@latest/dist/dotlottie-player.js"></script>
+  <script src="https://unpkg.com/@lottiefiles/dotlottie-wc@0.8.11/dist/dotlottie-wc.js" type="module"></script>
   <script src="script.js" defer></script>
 
-  <button id="toTop" class="hidden fixed bottom-6 right-6 w-12 h-12 rounded-full 
-  bg-white/10 backdrop-blur-md border border-white/20
-  flex items-center justify-center text-white text-xl
-  shadow-lg cursor-pointer transition-all duration-300 
-  hover:bg-white/20 hover:shadow-xl" aria-label="Scroll to top">
-    ↑
-  </button>
+  <script>
+    document.documentElement.style.overflow = "hidden";
+
+    window.onload = function () {
+      const loader = document.getElementById("preloader");
+
+      setTimeout(() => {
+        loader.style.transition = "opacity .6s ease";
+        loader.style.opacity = "0";
+
+        setTimeout(() => {
+          loader.remove();
+          document.documentElement.style.overflow = "";
+        }, 600);
+
+      }, 900);
+    };
+  </script>
+
+  <script>
+    const maxVisible = 3;
+    const items = document.querySelectorAll('.portfolio-item');
+    const button = document.getElementById('togglePortfolio');
+
+    items.forEach((item, index) => {
+      if (index >= maxVisible) item.classList.add('hidden');
+    });
+
+    let expanded = false;
+    button.addEventListener('click', () => {
+      expanded = !expanded;
+      items.forEach((item, index) => {
+        if (index >= maxVisible) {
+          item.classList.toggle('hidden', !expanded);
+        }
+      });
+      button.innerText = expanded ? 'Tampilkan Lebih Sedikit' : 'Lihat Semua Project';
+    });
+  </script>
 
 </body>
 
